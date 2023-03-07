@@ -12,6 +12,9 @@
     --secondary-color: #3daad3;
     --light-color: #fff;
     --card-color: #aeaeae;
+
+    --card-color2: #aeaeae;
+    --card-color3: #aeaeae;
 }
 
 *{
@@ -112,11 +115,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #aeaeae;    
+    color: var(--card-color);    
 }
 
 a {
-    color: #aeaeae;
+    color: var(--card-color);
 }
 
 img{
