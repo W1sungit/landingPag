@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ! ОБЩИЕ СТИЛИ */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ! СТИЛИ ДЛЯ БОЛЬШОГО ЭКРАНА (ДЕСКТОПЫ) */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 960px;
+            /* Старый способ центровки по горизонтали */
+            margin: 0 auto;
+        }
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+        .nav li {
+            margin-right: 10px;
+        }
+
+        .burger, .burger-nav{
+            display: none;
+        }
+
+        .logo{
+            font-size: 48px;
+        }
+        /* Стили для планшета */
+        @media screen and (max-width: 760px) {
+            .container{
+                flex-wrap: wrap;
+            }
+            .logo{
+                font-size: 18px;
+            }
+            .burger-nav{
+                margin-top: 20px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        /* Стили для мобилок */
+        @media screen and (max-width: 480px){
+            .logo{
+                font-size: 16px;
+            }
+            .nav{
+                display: none;
+            }
+            .burger-nav{
+                display: block;
+            }
+            .burger{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                background-color: #181818;
+                color: aliceblue;
+                cursor: pointer;
+                font-size: 24px;
+            }
+            .nav--active{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                padding: 10px;
+                margin: 0px;
+                list-style: none;
+                top: 100%;
+                width: 100%;
+            }
+            .nav--active li{
+                margin: 10px 0px;
+            }
+        }
+    </style>
+
+    <title>Пример сайта с адаптивным дизайном</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                Пример сайта с адаптивным дизайном
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="burger">&#9776</div>
+        </div>
+
+        <ul class="burger-nav nav--active">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora neque beatae aliquam inventore autem perferendis numquam est ex. 
+                Itaque pariatur adipisci nihil libero nesciunt. Officia distinctio quas labore consequatur modi quam doloribus, 
+                autem rem nemo fugiat expedita dicta saepe officiis aperiam ex sapiente excepturi perferendis dolores assumenda nesciunt, 
+                perspiciatis eligendi? Sint, assumenda totam! Aut laborum sit at inventore velit porro laboriosam soluta enim eius similique distinctio, 
+                nemo tempore! Adipisci libero doloremque ipsam magni quam, nam illo quae eos aperiam impedit recusandae numquam deserunt labore perferendis perspiciatis quibusdam
+                 a voluptates cupiditate assumenda rem pariatur incidunt nobis quas omnis. Illo, quos pariatur!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2023 Кванториум рулит. IT-Квантум ТОП.</p>
+        </div>
+    </footer>
+    <script>
+        const burger = document.querySelector(".burger")
+        const nav = document.querySelector(".nav--active")
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("nav--active")
+        })
+    </script>8
+</body>
+</html>
